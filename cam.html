@@ -5,31 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://unpkg.com/webcam-easy@1.0.5/dist/webcam-easy.min.js"></script>
     <link href="fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet">
+    
     <style>
         .tv-frame {
-            width: calc(100vw - 20%);
-            height: calc(100vh - 140px);
             border: 20px solid black;
             border-radius: 40px;
             overflow: hidden;
         }
 
         .screen {
-            width: 100%;
-            height: 100%;
             background-color: #ccc;
         }
-        #video{
-            width: 100%;
-            height: 100%;
-        }
+
         .save_btn{
-            margin-top: calc(90vh - 10px);
-            margin-left: calc(0vh);
-            position: absolute;
             border: 2px solid red;
+        }
+        .save_btn:hover{
+            background-color: green;
         }
         canvas{
             display: none;
@@ -120,20 +115,18 @@
                                 </a>
                             </div>
                         </li>
-
                     </ul>
-
                 </nav>
-                <!-- End of Topbar -->
-                
-                <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <div class="tv-frame">
-                        <div class="screen">
-                            <video id="video" autoplay></video>
+                    <div class="tv-frame row w-100 justify-content-center">
+                        <div class="screen col-12">
+                            <video id="video" class="d-flex align-items-center justify-content-center" autoplay></video>
                             <canvas id="canvas"></canvas>
                         </div>
                     </div>
+                    <!-- <div class="text-center justify-content-center mt-5">
+                        <a download class="btn btn-info save_btn" onclick="takeAPicture()">Chụp và lưu</a>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -154,18 +147,16 @@
         const canvasElement = document.getElementById('canvas');
         const webcam = new Webcam(video, 'user', canvasElement);
 
-        function takeAPicture(){
-            let picture = webcam.snap();
-            document.querySelector('a').href = picture;
-        }
+        // function takeAPicture(){
+        //     alert('Đã click')
+        //     let picture = webcam.snap();
+        //     alert('Lỗi 1')
+        //     document.querySelector('a').href = picture;
+        //     alert('Lỗi 2')
+        // }
     </script>
-    <!-- Bootstrap JavaScript -->
     <script src="jquery.min.js"></script>
     <script src="bootstrap.bundle.min.js"></script>
-    
     <script src="sb-admin-2.min.js"></script>
-    <script src="Chart.min.js"></script>
-    <script src="demo/chart-area-demo.js"></script>
-    <script src="demo/chart-pie-demo.js"></script>
 </body>
 </html>
