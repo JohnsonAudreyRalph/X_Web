@@ -78,6 +78,20 @@ ul>a{
     margin-bottom: 100px;
 }
 
+.tv-frame {
+    border: 20px solid black;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.screen {
+    background-color: #ccc;
+}
+
+canvas{
+    display: none;
+}
+
 #wrapper>ul>li:hover{
     background-color: red;
     width: 100%;
